@@ -6,4 +6,4 @@
    including your distribution, versions and the relevant log lines.
 
 Security problems go through a private report instead: see
-[SECURITY.md](SECURITY.md).
+[SECURITY.md](SECURITY.md). Anything else: **hello@phos.sh**.

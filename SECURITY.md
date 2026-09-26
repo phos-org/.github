@@ -5,8 +5,9 @@ personal data, so security reports are taken seriously.
 
 ## Reporting a vulnerability
 
-Please **do not open a public issue.** Report it privately through the
-affected repository's **Security** tab → **Report a vulnerability**.
+Please **do not open a public issue.** Report it privately, by email to
+**security@phos.sh**, or through the affected repository's **Security** tab →
+**Report a vulnerability**.
 
 Include what an attacker could do, how to reproduce it, and the commit you
 tested (`git rev-parse --short HEAD`). You will get an answer within a week,
