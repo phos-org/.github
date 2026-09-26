@@ -11,8 +11,8 @@ quick, and never in your way.
 | | |
 |---|---|
 | **[hypr-widgets](https://github.com/phos-org/hypr-widgets)** | Glass desktop widgets for Hyprland. Drag them anywhere, restyle each one, and get widgets for the apps you actually use. |
-| **[hypr-themes](https://github.com/phos-org/hypr-themes)** | Whole-desktop themes for Hyprland: each theme its own shell, look and wallpaper, switched in one step. |
-| **[hypr-displays](https://github.com/phos-org/hypr-displays)** | A display settings panel for Hyprland. |
+| **[hypr-displays](https://github.com/phos-org/hypr-displays)** | A display settings panel for Hyprland: arrange monitors, set modes and scaling, and get your old layout back if a change goes wrong. |
+| **hypr-themes** | Whole-desktop themes for Hyprland, switched in one step. *Coming soon.* |
 
 ### What we care about
 

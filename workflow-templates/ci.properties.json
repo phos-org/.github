@@ -1,0 +1,7 @@
+{
+  "name": "CI",
+  "description": "Scripts parse, and the project's npm and pytest suites pass: whichever of them it has.",
+  "iconName": "octicon checklist",
+  "categories": ["Continuous integration", "JavaScript", "Python", "Shell"],
+  "filePatterns": ["package.json$", "test_.*\\.py$", "pyproject.toml$"]
+}

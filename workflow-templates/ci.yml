@@ -1,0 +1,53 @@
+name: CI
+
+# The checks every phos-org project runs, whichever of them it has: shell
+# and Python scripts must parse, and its test suites (npm test, pytest) must
+# pass. A step whose files are not there is skipped.
+
+on:
+  push:
+    branches: [$default-branch]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Scripts parse
+        run: |
+          status=0
+          while IFS= read -r f; do
+            case "$(head -n1 "$f")" in
+              *python3*) python3 -m py_compile "$f" || status=1 ;;
+              *bash*|*/sh) bash -n "$f" || status=1 ;;
+            esac
+          done < <(git ls-files | while read -r f; do [ -x "$f" ] && [ -f "$f" ] && echo "$f"; done)
+          exit $status
+
+      - name: Node
+        if: hashFiles('package.json') != ''
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: npm test
+        if: hashFiles('package.json') != ''
+        run: |
+          if [ -f package-lock.json ]; then npm ci; fi
+          npm test
+
+      - name: Python
+        if: hashFiles('**/test_*.py', '**/*_test.py') != ''
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - name: pytest
+        if: hashFiles('**/test_*.py', '**/*_test.py') != ''
+        run: |
+          python -m pip install --quiet pytest
+          if [ -f requirements.txt ]; then python -m pip install --quiet -r requirements.txt; fi
+          python -m pytest -q

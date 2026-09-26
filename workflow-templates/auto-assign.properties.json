@@ -1,0 +1,6 @@
+{
+  "name": "Auto-assign issues",
+  "description": "Assign every new issue to the maintainers named in the ISSUE_ASSIGNEES variable.",
+  "iconName": "octicon person",
+  "categories": ["Automation"]
+}

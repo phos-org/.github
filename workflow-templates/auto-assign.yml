@@ -1,0 +1,26 @@
+name: Auto-assign issues
+
+# Assigns each new or reopened issue to the maintainers named in the
+# ISSUE_ASSIGNEES variable (comma-separated GitHub usernames), set once for
+# the organization or per repository under Settings > Secrets and variables >
+# Actions > Variables. An issue someone already assigned is left alone, and
+# nothing happens until the variable is set.
+
+on:
+  issues:
+    types: [opened, reopened]
+
+permissions:
+  issues: write
+
+jobs:
+  assign:
+    if: vars.ISSUE_ASSIGNEES != '' && github.event.issue.assignees[0] == null
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign to the maintainers
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ASSIGNEES: ${{ vars.ISSUE_ASSIGNEES }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: gh issue edit "$NUMBER" --repo "$GITHUB_REPOSITORY" --add-assignee "$ASSIGNEES"
