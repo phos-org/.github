@@ -1,0 +1,24 @@
+name: Bug report
+description: Something does not work as the documentation says it should.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: The relevant lines of the tool's log, if it has one.
+      render: text
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: The project's commit (`git rev-parse --short HEAD`), and your compositor's and distribution's versions.
+    validations:
+      required: true

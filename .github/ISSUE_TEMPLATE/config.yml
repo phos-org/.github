@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: phos-org projects
+    url: https://github.com/phos-org
+    about: Each project has a wiki with setup, troubleshooting and an FAQ.
