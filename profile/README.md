@@ -17,9 +17,9 @@ quick, and never in your way. **Light, not bloatware.**
 
 | | |
 |---|---|
-| **hypr-widgets** | Glass desktop widgets for Hyprland. Drag them anywhere, restyle each one, and get widgets for the apps you actually use. *Coming soon.* |
+| **phos widgets** | Glass desktop widgets for Hyprland. Drag them anywhere, restyle each one, and get widgets for the apps you actually use. *Coming soon.* |
 | **hypr-displays** | A display settings panel for Hyprland: arrange monitors, set modes and scaling, and get your old layout back if a change goes wrong. *Coming soon.* |
-| **hypr-themes** | Whole-desktop themes for Hyprland, switched in one step. *Coming soon.* |
+| **phos themes** | One theme for your whole desktop, switched in one step: Hyprland first, then KDE, XFCE and GNOME, with community themes to browse. *Coming soon.* |
 
 ### What we care about
 
