@@ -1,6 +1,8 @@
 name: Idea
 description: Something new, or something to do better.
 labels: [enhancement]
+projects: ["phos-org/3"]
+type: Feature
 body:
   - type: textarea
     id: idea
